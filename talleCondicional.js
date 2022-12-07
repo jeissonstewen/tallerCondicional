@@ -150,7 +150,7 @@ y su precio con descuento. El descuento lo hace en base a la clave, si la clave 
 descuento es del 10% y si la clave es 2 el descuento es del 20% (solo existen dos
 claves). */
 
-let nomArticulo, clave, precioOriginal, cantidad, descuento, precioDescuento
+/* let nomArticulo, clave, precioOriginal, cantidad, descuento, precioDescuento
 nomArticulo = prompt("Ingrese el nombre del articulo")
 clave = parseInt(prompt("Ingrese la clave del producto"))
 if(clave <1 || clave > 2) {
@@ -166,7 +166,7 @@ if (clave === 1){
 }
 precioDescuento = precioOriginal-(precioOriginal*descuento)/100
 console.log("EL ARTICULO ES: "+ nomArticulo + "\nLA CLAVE ES: "+ clave + "\nEL PRECIO ORIGINAL ES: "+
-precioOriginal + "\nLA CANTIDAD ES: " + cantidad + "\nEL PRECIO CON DESCUENTO ES: " + precioDescuento)
+precioOriginal + "\nLA CANTIDAD ES: " + cantidad + "\nEL PRECIO CON DESCUENTO ES: " + precioDescuento) */
 
 
 /* 8. En un hospital existen tres áreas: Psiquiatría, Pediatría, Traumatología. El presupuesto
@@ -175,9 +175,35 @@ permita ingresar el valor del presupuesto anual, ingresar el porcentaje correspo
 a cada área, realizar el cálculo del presupuesto que corresponde a cada área, si la suma
 de los porcentajes no corresponde al 100% debe mostrar un mensaje de error.
 Mostrar el porcentaje asignado a cada área y el presupuesto obtenido. */
+/* let Psiquiatria, Pediatria, Traumatologia, presupuesto, pPsi, pPed, pTrau
+presupuesto =  parseFloat(prompt("Ingrese el presupuesto anual"))
+pPsi = parseInt(prompt("Ingrese el porcentaje asigando a Psiquiatría"))
+pPed = parseInt(prompt("Ingrese el porcentaje asigando a Pediatría"))
+pTrau = parseInt(prompt("Ingrese el porcentaje asigando a Traumatología"))
+if(pPsi+pPed+pTrau >100){
+    alert("El porcentaje excede el 100%")
+}
+
+Psiquiatria = presupuesto * pPsi / 100
+Pediatria = presupuesto * pPed / 100
+Traumatologia = presupuesto * pTrau / 100
+
+alert("El porcentaje asigando a Psiquiatria es "+pPsi+"% = "+Psiquiatria)
+alert("El porcentaje asigando a Psiquiatria es "+pPed+"% = "+Pediatria)
+alert("El porcentaje asigando a Psiquiatria es "+pTrau+"% = "+Traumatologia) */
 
 
 /* 9. Diseñar un algoritmo para determinar el precio del tiquete de ida y vuelta en avión,
 conociendo la distancia a recorrer, sabiendo que si el número de días de estancia es
 superior o igual a 7 y la distancia superior a 800 km el billete tiene una reducción del
 30%. El precio por km es de $2,5 dólares. */
+
+let precioTiquete, distancia, numDias, descuento = 0.3, pKm = 2.5
+numDias = parseInt(prompt("Ingrese la cantidad de días de estancia"))
+distancia = parseInt(prompt("Ingrese la distancia a recorrer en km"))
+precioTiquete = distancia * pKm
+if(numDias >=7 && distancia > 800){
+    precioTiquete= precioTiquete - precioTiquete*descuento
+}
+
+alert("El precio del tiquete es "+precioTiquete)
